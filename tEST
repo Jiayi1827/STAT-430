@@ -1,0 +1,18 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+np.random.seed(500)
+
+# Generate a random walk with added drift 0.1
+wd = np.random.normal(size=200) - 0.1
+xd = np.cumsum(wd)
+
+# Create a time array
+x_time = np.arange(0, 200)
+
+# Plot the Random Walk
+plt.plot(x_time, xd)
+
+plt.title('Simulated Random Walk: Xt = Xt-1 - 0.1 + Wt')
+plt.show()
